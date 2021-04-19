@@ -98,7 +98,7 @@ def cnn_model():
     model.add(Dense(128, activation='relu')) 
     model.add(Dropout(0.5)) 
     
-    model.add(Dense(43, activation='softmax'))
+    model.add(Dense(43, activation='sigmoid'))
     return model
 
 model = cnn_model()
@@ -114,7 +114,7 @@ model.compile(loss='categorical_crossentropy',
               optimizer='adam',
               metrics=['acc'])
 
-epochs = 1
+epochs = 5
 history = model.fit(X_train, Y_train, validation_data=(X_valid, Y_valid), batch_size=32, epochs=epochs,verbose=1)
 model.save('Traffic_Recognition.h5')
 
