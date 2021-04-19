@@ -134,7 +134,7 @@ plt.title('Loss')
 plt.xlabel('epochs')
 plt.ylabel('loss')
 plt.legend()
-plt.show()
+
 #Testing accuracy on test dataset
 y_test=pd.read_csv(".\\archive\\Test.csv")
 labels=y_test['Path'].values
